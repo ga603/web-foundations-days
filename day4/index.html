@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Notes Toolkit</title>
+    <title>QuickNotes</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -13,33 +13,82 @@
 
 <body>
 
-    <main class="container">
+    <header>
+        <h1>QuickNotes</h1>
+        <p>Your simple note-taking app</p>
+    </header>
 
-        <h1>Notes Toolkit</h1>
+    <main>
 
-        <p>Write your note below. Your draft will be saved automatically.</p>
+        <section>
+            <h2>Add a note</h2>
 
-        <label for="note-text">Your Note</label>
+            <form id="note-form">
 
-        <textarea
-            id="note-text"
-            rows="10"
-            placeholder="Start typing your note here..."
-        ></textarea>
+                <div class="form-group">
 
-        <p id="char-count">0 / 200 characters</p>
+                    <label for="note-input">Note</label>
 
-        <p id="word-count">0 words</p>
+                    <input
+                        type="text"
+                        id="note-input"
+                        name="note"
+                        placeholder="Write your note..."
+                    >
 
-        <button id="clear-btn" type="button">
-            Clear
-        </button>
+                </div>
 
-        <button id="theme-toggle" type="button">
-            Dark mode
-        </button>
+                <div class="form-group">
+
+                    <label for="note-category">Category</label>
+
+                    <select id="note-category" name="category">
+
+                        <option value="personal">Personal</option>
+
+                        <option value="work">Work</option>
+
+                        <option value="study">Study</option>
+
+                    </select>
+
+                </div>
+
+                <button type="submit">Add Note</button>
+
+            </form>
+
+            <p id="error-message"></p>
+
+        </section>
+
+
+        <section>
+
+            <h2>Your notes</h2>
+
+            <label for="search-input">Search notes</label>
+
+            <input
+                type="search"
+                id="search-input"
+                placeholder="Search your notes..."
+            >
+
+            <p id="note-count">You have no notes yet.</p>
+
+            <ul id="notes-list"></ul>
+
+        </section>
 
     </main>
+
+
+    <footer>
+
+        <p>&copy; 2026 QuickNotes. All rights reserved.</p>
+
+    </footer>
 
 </body>
 </html>
